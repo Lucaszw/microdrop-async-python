@@ -1,3 +1,3 @@
-# @microdrop/async - Python
+# @microdrop - Python
 
-Port for @microdrop/async to Python 3.6 (based on asyncio)
+Port for @microdrop/async to Python 3.6. Library for controlling the Microdrop UI and DropBot Hardware.
