@@ -61,6 +61,10 @@ class Microdrop:
         self.mqttclient.on_state_msg(sender, prop, self.safe(state_msg))
         return await future
     
+    async def get_subscriptions(self, receiver):
+        payload = await self.trigger_plugin(receiver, 'get-subscriptions', {})
+        return payload['response']
+    
     async def put_plugin(self, receiver, prop, val):
         if not isinstance(val, dict):
             msg = {}
@@ -88,4 +92,4 @@ class Microdrop:
             future.set_result(payload)
         self.mqttclient.on_notify_msg(receiver, action, self.safe(notify_msg))
         self.mqttclient.send_message(topic, val)
-        return await future 
+        return await future               
