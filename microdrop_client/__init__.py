@@ -92,7 +92,7 @@ class Microdrop:
             raise self.dump_stack([LABEL, topic], err)
 
     async def get_subscriptions(self, receiver, timeout=DEFAULT_TIMEOUT):
-        LABEL = f'<MicrodropPython::get_subscriptions::{receiver}'
+        LABEL = f'<MicrodropPython::get_subscriptions::{receiver}>'
         try:
             payload = await self.trigger_plugin(receiver, 'get-subscriptions', {}, timeout)
             return payload['response']
